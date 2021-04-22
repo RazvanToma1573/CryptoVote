@@ -25,13 +25,12 @@ contract ElectionFactory {
 
     struct Candidate { 
         string name;
-        uint id;
     }
 
     Election[] public elections;
     Candidate[] public candidates;
 
-    mapping (uint => uint) public CandidateToElection;
+    mapping (string => uint) public CandidateToElection;
     mapping (uint => uint) ElectionToCount;
     
     function _createCandidate(string memory _name, uint _electionId) internal electionCanTakeCandidate(_electionId) {

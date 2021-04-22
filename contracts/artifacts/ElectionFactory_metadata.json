@@ -1,0 +1,117 @@
+{
+	"compiler": {
+		"version": "0.7.6+commit.7338295f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "CandidateToElection",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "candidates",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "elections",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "addCandidateDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "electionDate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "candidateLimit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/election.sol": "ElectionFactory"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/election.sol": {
+			"keccak256": "0xd316083fe2cf358f2e6381d93f0daadd9ddc570ab38d812ea31c6e0b4e7d9b26",
+			"urls": [
+				"bzz-raw://f20e9bf473c21194f5bcb49329b516f3ece581ce398e161a96434b6f6e026178",
+				"dweb:/ipfs/QmSQFBkY6zZm63u2DcQ64W41Bgom4LPWCK3VhcR3Bqo2Yf"
+			]
+		}
+	},
+	"version": 1
+}
