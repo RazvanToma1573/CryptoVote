@@ -15,29 +15,6 @@ contract ElectionFactory is Ownable {
         _;
     }
     
-    modifier isValidVote(uint _electionId, uint _candidateId) {
-        bool electionFound = false;
-        for (uint i = 0; i <= elections.length - 1; i++) {
-            if (elections[i].electionId == _electionId) {
-                electionFound = true;
-                break;
-            }
-        }
-        
-        bool candidateFound = false;
-        for (uint i = 0; i <= candidates.length - 1; i++) {
-            if (candidates[i].candidateId == _candidateId) {
-                candidateFound = true;
-                break;
-            }
-        }
-        
-        require(electionFound == true);
-        require(candidateFound == true);
-        require(CandidateToElection[_candidateId] == _electionId);
-        _;
-    }
-
     struct Election {
         // uint id;
         // address[] public candidates;
@@ -56,7 +33,6 @@ contract ElectionFactory is Ownable {
 
     Election[] public elections;
     Candidate[] public candidates;
-    uint[] public activeElections;
 
     mapping (uint => uint) public CandidateToElection;
     mapping (uint => uint) ElectionToCount;
@@ -67,30 +43,52 @@ contract ElectionFactory is Ownable {
         // emit NewElection(id,  _name, _addCandidateDate,  _electionDate,  _candidateLimit);
     }
     
-    function createCandidate(string calldata _name, uint _electionId) external onlyOwner electionCanTakeCandidate(_electionId) {
+    function _createCandidate(string calldata _name, uint _electionId) external onlyOwner electionCanTakeCandidate(_electionId) {
         uint id = candidates.length;
         candidates.push(Candidate(id, _name, 0));
         CandidateToElection[candidates[id].candidateId] = _electionId;
         ElectionToCount[_electionId]++;
     }
     
-    function addVoteToCandidate(uint _electionId, uint _candidateId) external isValidVote(_electionId, _candidateId) {
+    function addVoteToCandidate(uint _candidateId) external returns(uint) {
         for (uint i = 0; i <= candidates.length - 1; i++) {
             if (candidates[i].candidateId == _candidateId) {
                 candidates[i].numberOfVotes++;
                 break;
             }
         }
+        return 1;
     }
     
-    function getActiveElections() external returns(uint[] memory) {
-        for (uint i = 0; i < elections.length - 1; i++) {
+    function getActiveElections() external view returns(uint[] memory) {
+        uint[] memory activeElections = new uint[](elections.length);
+        for (uint i = 0; i < elections.length; i++) {
             if (elections[i].electionDate - block.timestamp > 0) {
-                activeElections.push(elections[i].electionId);
+                activeElections[i] = elections[i].electionId;
             }
         }
         return activeElections;
     }
+    
+    function getCandidates() external view returns(uint[] memory) {
+        uint[] memory candidatesIds = new uint[](candidates.length);
+        for (uint i = 0; i < candidates.length; i++) {
+            candidatesIds[i] = candidates[i].candidateId;
+        }
+        return candidatesIds;
+    }
+    
+    
+    function getCandidatesForElection(uint _electionId) external view returns(uint[] memory) {
+        uint[] memory candidatesIds = new uint[](candidates.length);
+        for (uint i = 0; i < candidates.length; i++) {
+            if (CandidateToElection[candidates[i].candidateId] == _electionId) {
+                candidatesIds[i] = candidates[i].candidateId;
+            }
+        }
+        return candidatesIds;
+    }
+    
     
     function getBlockTimestamp() external view returns(uint) {
         return block.timestamp;

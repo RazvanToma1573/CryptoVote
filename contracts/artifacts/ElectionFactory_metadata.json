@@ -55,6 +55,26 @@
 					},
 					{
 						"internalType": "uint256",
+						"name": "_electionId",
+						"type": "uint256"
+					}
+				],
+				"name": "_createCandidate",
+				"outputs": [],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
 						"name": "_addCandidateDate",
 						"type": "uint256"
 					},
@@ -76,34 +96,8 @@
 				"type": "function"
 			},
 			{
-				"constant": true,
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "activeElections",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"payable": false,
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"constant": false,
 				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_electionId",
-						"type": "uint256"
-					},
 					{
 						"internalType": "uint256",
 						"name": "_candidateId",
@@ -111,7 +105,13 @@
 					}
 				],
 				"name": "addVoteToCandidate",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"payable": false,
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -145,26 +145,6 @@
 				],
 				"payable": false,
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"constant": false,
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_electionId",
-						"type": "uint256"
-					}
-				],
-				"name": "createCandidate",
-				"outputs": [],
-				"payable": false,
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -209,7 +189,7 @@
 				"type": "function"
 			},
 			{
-				"constant": false,
+				"constant": true,
 				"inputs": [],
 				"name": "getActiveElections",
 				"outputs": [
@@ -220,7 +200,7 @@
 					}
 				],
 				"payable": false,
-				"stateMutability": "nonpayable",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -232,6 +212,42 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [],
+				"name": "getCandidates",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"payable": false,
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"constant": true,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_electionId",
+						"type": "uint256"
+					}
+				],
+				"name": "getCandidatesForElection",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
 					}
 				],
 				"payable": false,
@@ -334,10 +350,10 @@
 	},
 	"sources": {
 		"CryptoVote/contracts/election.sol": {
-			"keccak256": "0x2c1b97ba0e975f4f091e9d173bc6e591a4e657b450bfd1304bfa0bfcfe0c1edb",
+			"keccak256": "0x0420ac015d82121cf54e8b1ec296f4cc6a48d1ca95dbe9f7eeba4057f9fd5c86",
 			"urls": [
-				"bzz-raw://85a92b00c34a21c7639abbeebc36e51dfcc31995cf6a6e8b123852a2adb80e1f",
-				"dweb:/ipfs/QmfH4K8wLqcSRQd58j4x5gkQpiBxPAKZZia46ULyVF2EoY"
+				"bzz-raw://41c6d4a18fd8f45cc1565fc8a5ddae5fd188700e8901210ee0cdd36f7df1b3f8",
+				"dweb:/ipfs/QmSmtLwvp8zb3dMQFsgRm5pW3GeK98EP2J3AGfsFDqk7Q5"
 			]
 		},
 		"CryptoVote/contracts/ownable.sol": {

@@ -44,14 +44,74 @@
 		},
 		"gasEstimates": null,
 		"methodIdentifiers": {
-			"getActiveElections()": "8a3b63b0"
+			"addVoteToCandidate(uint256)": "fe37d615",
+			"getActiveElections()": "8a3b63b0",
+			"getCandidates()": "06a49fce",
+			"getCandidatesForElection(uint256)": "1641aa10"
 		}
 	},
 	"abi": [
 		{
+			"constant": false,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_candidateId",
+					"type": "uint256"
+				}
+			],
+			"name": "addVoteToCandidate",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"payable": false,
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
 			"constant": true,
 			"inputs": [],
 			"name": "getActiveElections",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [],
+			"name": "getCandidates",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"payable": false,
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"constant": true,
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_electionId",
+					"type": "uint256"
+				}
+			],
+			"name": "getCandidatesForElection",
 			"outputs": [
 				{
 					"internalType": "uint256[]",

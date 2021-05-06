@@ -25,6 +25,32 @@
 				"type": "event"
 			},
 			{
+				"constant": false,
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_electionId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_candidateId",
+						"type": "uint256"
+					}
+				],
+				"name": "addVoteToCandidate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"payable": false,
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"constant": true,
 				"inputs": [],
 				"name": "getActiveElections",
@@ -157,10 +183,10 @@
 			]
 		},
 		"CryptoVote/contracts/user.sol": {
-			"keccak256": "0xf94d5b98f210ffd77bccf10a0fa77c8cd1429a28fc58dcd04caa8edfddf2609f",
+			"keccak256": "0xd40019265f0d3c28fb0a32d38d147619e1b1d648110e85cb64753db1ea93fee5",
 			"urls": [
-				"bzz-raw://b451cd7b34968d3b35a5f5d4cf73a6a804b3f9c66c2498b03f6b63d1611591c7",
-				"dweb:/ipfs/QmdAwAndhrACHdXXgxTmCyxhF4GrMg1sa8NM6DR5kWFAi2"
+				"bzz-raw://07522969b82bc406aed5d4057767972458e63ad5cee53c2f3c1c56f6cc952af4",
+				"dweb:/ipfs/QmSPVLVjkCmxFzPHu1TZg6Shc3ENZfzYRhT45BfANJf3jx"
 			]
 		}
 	},
