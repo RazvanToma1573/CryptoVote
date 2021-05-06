@@ -45,7 +45,6 @@ contract User is Ownable {
         _;
     }
 
-    // address electionFactoryAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
     ElectionInterface electionInterface;
     
     mapping(address => uint[]) ElectionToVoters;
@@ -59,7 +58,6 @@ contract User is Ownable {
     }
     
     function addVoteToCandidate(uint _electionId, uint _candidateId) external isValidVote(_electionId, _candidateId) returns(uint){
-        // check election id and candidtae id
         uint count = electionInterface.getActiveElections().length;
         if (ElectionToVoters[msg.sender].length == 0) {
             ElectionToVoters[msg.sender] = new uint[](count);

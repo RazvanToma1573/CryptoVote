@@ -350,10 +350,10 @@
 	},
 	"sources": {
 		"CryptoVote/contracts/election.sol": {
-			"keccak256": "0x0420ac015d82121cf54e8b1ec296f4cc6a48d1ca95dbe9f7eeba4057f9fd5c86",
+			"keccak256": "0x1d6e981f8057df7fce8c189cf93e28fbaa06c37ffc18d6222cf0ffe662bff092",
 			"urls": [
-				"bzz-raw://41c6d4a18fd8f45cc1565fc8a5ddae5fd188700e8901210ee0cdd36f7df1b3f8",
-				"dweb:/ipfs/QmSmtLwvp8zb3dMQFsgRm5pW3GeK98EP2J3AGfsFDqk7Q5"
+				"bzz-raw://e86f2270180b4b7b66bb5d4953cecb92bcd4ba900b7f8d5fda8aed55353c2ea3",
+				"dweb:/ipfs/QmQsE94XatV4yexAqNJU9aTVnUQN7mLqYxA8jUZKUndJWS"
 			]
 		},
 		"CryptoVote/contracts/ownable.sol": {

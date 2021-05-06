@@ -183,10 +183,10 @@
 			]
 		},
 		"CryptoVote/contracts/user.sol": {
-			"keccak256": "0xd40019265f0d3c28fb0a32d38d147619e1b1d648110e85cb64753db1ea93fee5",
+			"keccak256": "0x505af8efdd826786619e807849f1b3a0f390899bf3cb179bd8e231a1e86c0c78",
 			"urls": [
-				"bzz-raw://07522969b82bc406aed5d4057767972458e63ad5cee53c2f3c1c56f6cc952af4",
-				"dweb:/ipfs/QmSPVLVjkCmxFzPHu1TZg6Shc3ENZfzYRhT45BfANJf3jx"
+				"bzz-raw://09726a826b0e3399883cd1893d5b54f5f249e1cf7cccaaf5e1c1d368e342bf3c",
+				"dweb:/ipfs/QmarhwBaQeAYsJYDkSvrmNGNfvjmbXPEdiRL7uQuyqZ1oa"
 			]
 		}
 	},
