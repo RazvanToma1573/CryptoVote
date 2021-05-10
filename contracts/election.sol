@@ -11,16 +11,16 @@ contract ElectionFactory is Ownable {
     }
     
     struct Election {
-        uint electionId;
         string name;
+        uint electionId;
         uint addCandidateDate;
         uint electionDate;
         uint candidateLimit;
     }
 
     struct Candidate {
-        uint candidateId;
         string name;
+        uint candidateId;
         uint numberOfVotes;
     }
 
@@ -32,12 +32,12 @@ contract ElectionFactory is Ownable {
 
     function _createElection(string calldata _name, uint _addCandidateDate, uint _electionDate, uint _candidateLimit) external onlyOwner {
         uint id = elections.length;
-        elections.push(Election(id, _name, _addCandidateDate, _electionDate, _candidateLimit));
+        elections.push(Election(_name, id, _addCandidateDate, _electionDate, _candidateLimit));
     }
     
     function _createCandidate(string calldata _name, uint _electionId) external onlyOwner electionCanTakeCandidate(_electionId) {
         uint id = candidates.length;
-        candidates.push(Candidate(id, _name, 0));
+        candidates.push(Candidate(_name, id, 0));
         CandidateToElection[candidates[id].candidateId] = _electionId;
         ElectionToCount[_electionId]++;
     }
